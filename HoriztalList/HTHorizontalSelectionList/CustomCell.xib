@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CustomCell">
+            <rect key="frame" x="0.0" y="0.0" width="270" height="406"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="270" height="406"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jQq-GS-IZw">
+                        <rect key="frame" x="108" y="5" width="54" height="34"/>
+                        <state key="normal" title="Button">
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MFZ-6C-J08">
+                        <rect key="frame" x="7" y="44" width="256" height="100"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="100" id="cvJ-Ih-EhR"/>
+                        </constraints>
+                        <state key="normal" image="512_512.png"/>
+                    </button>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="MFZ-6C-J08" secondAttribute="bottom" priority="250" constant="5" id="EB0-iu-xhd"/>
+                <constraint firstItem="jQq-GS-IZw" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="GdL-Ri-dai"/>
+                <constraint firstItem="jQq-GS-IZw" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="GkW-Gq-ctg"/>
+                <constraint firstItem="MFZ-6C-J08" firstAttribute="top" secondItem="jQq-GS-IZw" secondAttribute="bottom" constant="5" id="JeK-UN-qja"/>
+                <constraint firstItem="MFZ-6C-J08" firstAttribute="centerX" secondItem="jQq-GS-IZw" secondAttribute="centerX" id="Vq9-Au-Shh"/>
+            </constraints>
+            <size key="customSize" width="270" height="406"/>
+            <connections>
+                <outlet property="imageButton" destination="MFZ-6C-J08" id="8l9-nL-4Ik"/>
+                <outlet property="titleButton" destination="jQq-GS-IZw" id="7d3-uH-c0c"/>
+            </connections>
+            <point key="canvasLocation" x="39" y="49"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="512_512.png" width="256" height="256"/>
+    </resources>
+</document>
