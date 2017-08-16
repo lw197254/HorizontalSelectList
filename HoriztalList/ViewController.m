@@ -28,12 +28,13 @@
     [self.list mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(self.view);
       
-          make.height.mas_equalTo(244);
+          make.height.mas_equalTo(44);
           make.top.equalTo(self.view).with.offset(64);
     }];
     self.list.delegate = self;
     self.list.dataSource = self;
-    self.list.sectionInset = UIEdgeInsetsMake(5, 15, 5, 20);
+    self.list.sectionInset = UIEdgeInsetsMake(5, 10, 5, 10);
+    self.list.seperateSpace = 10;
     self.data = [NSMutableArray array];
     NSString*str = @"ab";
     
@@ -43,7 +44,7 @@
         [self.data addObject:aaa];
     }
     
-    self.list.seperateSpace = 1;
+    
     [self.list reloadData];
     self.tableView.estimatedRowHeight = 50;
     [self.tableView registerClass:[TableViewCell class] forCellReuseIdentifier:@"TableViewCell"];
@@ -78,7 +79,7 @@
     return self.data[index];
 }
 -(void)selectionList:(HorizontalSelectionList *)selectionList didSelectButtonWithIndex:(NSInteger)index{
-    [self.data removeObjectAtIndex:index];
+//    [self.data removeObjectAtIndex:index];
     [self.list reloadData];
 }
 //-(__kindof UICollectionViewCell*)selectionList:(HorizontalSelectionList *)selectionList viewForItemWithIndex:(NSInteger)index{
@@ -98,18 +99,28 @@
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"注意" message:@"我的呈现方式变了" preferredStyle:UIAlertControllerStyleAlert];
+//    for (NSInteger i = 0; i < 10; i++) {
+//        NSString* str = self.data[i];
+//        NSString*aaa = [NSString stringWithFormat:@"%@%@我是第%ld个",str,str,i];
+//        [self.data replaceObjectAtIndex:i withObject:aaa];
+//    }
+//    [self.list reloadData];
     
-    // 2.创建取消按钮并添加到提示框上
-    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
-        
-        NSLog(@"取消按钮被点击了");
-    }]];
-    [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
-       textField.placeholder = @"aaaa";
-    }];
-    // 3.呈现提示框
-    [self presentViewController:alert animated:YES completion:nil];
+    [self.data insertObject:@"wode" atIndex:0];
+    
+      
+//    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"注意" message:@"我的呈现方式变了" preferredStyle:UIAlertControllerStyleAlert];
+//    
+//    // 2.创建取消按钮并添加到提示框上
+//    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+//        
+//        NSLog(@"取消按钮被点击了");
+//    }]];
+//    [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+//       textField.placeholder = @"aaaa";
+//    }];
+//    // 3.呈现提示框
+//    [self presentViewController:alert animated:YES completion:nil];
 }
 - (IBAction)TouchDown:(id)sender {
 //    self.otherButton.highlighted = YES;

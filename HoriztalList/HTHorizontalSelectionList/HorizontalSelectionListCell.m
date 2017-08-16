@@ -23,6 +23,9 @@
 -(instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
         self.backgroundColor = [UIColor orangeColor];
+//        [self mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.height.mas_equalTo(40);
+//        }];
       
     }
     return self;
@@ -56,18 +59,27 @@
     
     return _titleButton;
 }
-//-(UICollectionViewLayoutAttributes*)preferredLayoutAttributesFittingAttributes:(UICollectionViewLayoutAttributes *)layoutAttributes {
+-(UICollectionViewLayoutAttributes*)preferredLayoutAttributesFittingAttributes:(UICollectionViewLayoutAttributes *)layoutAttributes {
 //    [self setNeedsLayout];
 //    [self layoutIfNeeded];
 //    CGSize size = [self.contentView systemLayoutSizeFittingSize:layoutAttributes.size]; // 获取自适应size
 //    CGRect newFrame = layoutAttributes.frame;
-//    newFrame.size.height = 30;
+//    newFrame.size.height = size.height;
 //    newFrame.size.width = size.width;
 //    layoutAttributes.frame = newFrame;
-//    return layoutAttributes;
-//    
-//    
-//}
+    
+    
+    
+    UICollectionViewLayoutAttributes *attributes = [super preferredLayoutAttributesFittingAttributes:layoutAttributes];
+    CGRect rect = [self.titleButton.titleLabel.text boundingRectWithSize:CGSizeMake(CGFLOAT_MAX, 30) options:NSStringDrawingTruncatesLastVisibleLine|   NSStringDrawingUsesFontLeading |NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:18]} context:nil];
+    rect.size.width +=8;
+    rect.size.height+=8;
+    attributes.frame = rect;
+    return attributes;
+    return layoutAttributes;
+    
+    
+}
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

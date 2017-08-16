@@ -21,7 +21,7 @@
 
 @interface HorizontalSelectionList ()<UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
-@property (nonatomic, strong) UICollectionView *collectionView;
+
 @property (nonatomic, assign) NSInteger itemNumber;
 ///右边表示还有栏目的遮盖图，有栏目就灰色，没有栏目就透明
 @property (nonatomic, strong) UIImageView *rightMaskView;
@@ -78,32 +78,68 @@
     
 }
 -(void)reloadData{
+    [self updateItemCount];
+         self.layout.sectionInset =UIEdgeInsetsMake(self.sectionInset.top, self.sectionInset.left, self.sectionInset.bottom, self.sectionInset.right);
+//     self.layout.sectionInset =UIEdgeInsetsMake(self.sectionInset.top, self.sectionInset.left, self.sectionInset.bottom, self.sectionInset.right+(self.itemNumber-1)*(self.seperateSpace-defaultMinimumLineSpacing+defaultMinimumInteritemSpacing-self.layout.minimumInteritemSpacing));
+    
+    [self.collectionView.collectionViewLayout invalidateLayout];
+    [self.collectionView reloadData];
+}
+-(void)insertItemAtIndexes:(NSArray<NSNumber*>*)indexes{
+    [self updateItemCount];
+    [self.collectionView performBatchUpdates:^{
+        NSMutableArray*array = [NSMutableArray array];
+        for (NSNumber*number in indexes) {
+            NSIndexPath*index = [NSIndexPath indexPathForRow:[number integerValue] inSection:0];
+            [array addObject:index];
+        }
+        
+        [self.collectionView insertItemsAtIndexPaths:array];
+        
+    } completion:nil];
+}
+
+-(void)deleteItemAtIndexes:(NSArray<NSNumber*>*)indexes{
+    [self updateItemCount];
+    [self.collectionView performBatchUpdates:^{
+        NSMutableArray*array = [NSMutableArray array];
+        for (NSNumber*number in indexes) {
+            NSIndexPath*index = [NSIndexPath indexPathForRow:[number integerValue] inSection:0];
+            [array addObject:index];
+        }
+        
+        [self.collectionView deleteItemsAtIndexPaths:array];
+        
+    } completion:nil];
+}
+
+-(void)updateItemCount{
     if ([self.dataSource respondsToSelector:@selector(numberOfItemsInSelectionList:)]) {
         self.itemNumber = [self.dataSource numberOfItemsInSelectionList:self];
     }else{
         self.itemNumber = 0;
     }
-    
-     self.layout.sectionInset =UIEdgeInsetsMake(self.sectionInset.top, self.sectionInset.left, self.sectionInset.bottom, self.sectionInset.right+(self.itemNumber-1)*(self.seperateSpace-defaultMinimumLineSpacing+defaultMinimumInteritemSpacing-self.layout.minimumInteritemSpacing));
-    
-   
-    [self.collectionView reloadData];
 }
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
+   
     return 1;
 }
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    
     return self.itemNumber;
 }
 -(UICollectionViewCell*)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    
+    
     if ([self.dataSource respondsToSelector:@selector(selectionList:viewForItemWithIndex:)]) {
         return [self.dataSource selectionList:self viewForItemWithIndex:indexPath.row];
     }else{
         HorizontalSelectionListCell*cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
-        CGFloat height = collectionView.bounds.size.height;
-        [cell.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.height.mas_equalTo(height-self.layout.minimumInteritemSpacing*2-self.layout.sectionInset.top-self.layout.sectionInset.bottom);
-        }];
+//        CGFloat height = collectionView.bounds.size.height;
+////        [cell.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
+////            make.height.mas_equalTo(height-self.layout.minimumInteritemSpacing*2-self.layout.sectionInset.top-self.layout.sectionInset.bottom);
+////        }];
         cell.title = [self.dataSource selectionList:self titleForItemWithIndex:indexPath.row];
         return cell;
     }
@@ -120,8 +156,8 @@
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    if ([self.delegate respondsToSelector:@selector(selectionList:didSelectButtonWithIndex:)]) {
-        [self.delegate selectionList:self didSelectButtonWithIndex:indexPath.row];
+    if ([self.delegate respondsToSelector:@selector(selectionList:didSelectItemWithIndex:)]) {
+        [self.delegate selectionList:self didSelectItemWithIndex:indexPath.row];
     }
 }
 
@@ -136,18 +172,24 @@
         self.layout.minimumLineSpacing = seperateSpace;
     }
 }
-
+//-(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
+//    return CGSizeMake(100, 240);
+//}
 -(UICollectionView*)collectionView{
     if (!_collectionView) {
         self.layout.minimumLineSpacing = self.seperateSpace;
-        self.layout.minimumInteritemSpacing = 0;
+        self.layout.minimumInteritemSpacing = 10;
     ///第一个
-        
-        self.layout.sectionInset =UIEdgeInsetsMake(self.sectionInset.top, self.sectionInset.left, self.sectionInset.bottom, self.sectionInset.right+(self.itemNumber-1)*(self.seperateSpace-defaultMinimumLineSpacing+defaultMinimumInteritemSpacing-self.layout.minimumInteritemSpacing));
+//        self.layout.sectionInset = UIEdgeInsetsMake(5, 10, 5, 10);
+//        self.layout.sectionInset =UIEdgeInsetsMake(self.sectionInset.top, self.sectionInset.left, self.sectionInset.bottom, self.sectionInset.right+(self.itemNumber-1)*(self.seperateSpace-defaultMinimumLineSpacing+defaultMinimumInteritemSpacing-self.layout.minimumInteritemSpacing));
         ///这个大小只要部位CGSizeZero就可以
-         self.layout.estimatedItemSize = CGSizeMake(30,30);
+       
+        self.layout.estimatedItemSize = CGSizeMake(30,30);
         _collectionView = [[UICollectionView alloc]initWithFrame:CGRectZero collectionViewLayout:self.layout];
         _collectionView.directionalLockEnabled = YES;
+        if ([_collectionView respondsToSelector:@selector(setPrefetchingEnabled:)]) {
+            _collectionView.prefetchingEnabled = false;
+        }
     }
     
     

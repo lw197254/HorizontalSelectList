@@ -61,6 +61,7 @@ typedef NS_ENUM(NSInteger, HTHorizontalSelectionIndicatorStyle) {
 @property(nonatomic,assign)NSInteger minShowCount;
 @property(nonatomic,strong)UIFont* titleFont;
 @property (nonatomic) HTHorizontalSelectionIndicatorStyle selectionIndicatorStyle;
+@property (nonatomic, strong) UICollectionView *collectionView;
 
 - (void)setTitleColor:(UIColor *)color forState:(UIControlState)state;
 -(__kindof UICollectionViewCell*)dequeueReusableCellWithClass:(Class)class forIndex:(NSInteger)index isXIB:(BOOL)isXIB;
@@ -68,6 +69,10 @@ typedef NS_ENUM(NSInteger, HTHorizontalSelectionIndicatorStyle) {
 
 - (void)setSelectedItemIndex:(NSInteger)selectedItemIndex animated:(BOOL)animated;
 
+///插入元素
+-(void)insertItemAtIndexes:(NSArray<NSNumber*>*)indexes;
+///删除元素
+-(void)deleteItemAtIndexes:(NSArray<NSNumber*>*)indexes;
 @end
 
 @protocol HorizontalSelectionListDataSource <NSObject>
@@ -75,14 +80,16 @@ typedef NS_ENUM(NSInteger, HTHorizontalSelectionIndicatorStyle) {
 - (NSInteger)numberOfItemsInSelectionList:(HorizontalSelectionList *)selectionList;
 
 @optional
+///两者选一个
 - (NSString *)selectionList:(HorizontalSelectionList *)selectionList titleForItemWithIndex:(NSInteger)index;
+
 - (__kindof UICollectionViewCell *)selectionList:(HorizontalSelectionList *)selectionList viewForItemWithIndex:(NSInteger)index;
 
 @end
 
 @protocol HorizontalSelectionListDelegate <NSObject>
 
-- (void)selectionList:(HorizontalSelectionList *)selectionList didSelectButtonWithIndex:(NSInteger)index;
+- (void)selectionList:(HorizontalSelectionList *)selectionList didSelectItemWithIndex:(NSInteger)index;
 
 
 
