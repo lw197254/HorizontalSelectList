@@ -46,14 +46,14 @@
     if (!_titleButton) {
         _titleButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [_titleButton setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
-        [_titleButton setTitleColor:[UIColor redColor] forState:UIControlStateSelected];
+        
         _titleButton.tintColor = [UIColor clearColor];
         _titleButton.userInteractionEnabled = NO;
-        [_titleButton setTitleColor:[UIColor brownColor] forState:UIControlStateHighlighted];
+      
         [self.contentView addSubview:_titleButton];
         [_titleButton mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.equalTo(self.contentView);
-           
+//            make.height.mas_equalTo(35);
         }];
     }
     
@@ -67,18 +67,32 @@
 //    newFrame.size.height = size.height;
 //    newFrame.size.width = size.width;
 //    layoutAttributes.frame = newFrame;
-    
-    
-    
+
+
+
+
     UICollectionViewLayoutAttributes *attributes = [super preferredLayoutAttributesFittingAttributes:layoutAttributes];
-    CGRect rect = [self.titleButton.titleLabel.text boundingRectWithSize:CGSizeMake(CGFLOAT_MAX, 30) options:NSStringDrawingTruncatesLastVisibleLine|   NSStringDrawingUsesFontLeading |NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:18]} context:nil];
-    rect.size.width +=8;
-    rect.size.height+=8;
-    attributes.frame = rect;
+    static NSInteger i = 0;
+    i++;
+    NSLog(@"%ld___%@",i,self.titleButton.titleLabel.text);
+//    if(self.titleButton.titleLabel.text.length >0){
+//
+//        CGRect rect = [self.titleButton.titleLabel.text boundingRectWithSize:CGSizeMake(CGFLOAT_MAX, 30) options:NSStringDrawingTruncatesLastVisibleLine attributes:@{NSFontAttributeName: self.titleButton.titleLabel.font} context:nil];
+//        
+//
+//
+//
+//        rect.size.width +=8;
+//////        rect.size.height+=8;
+////        attributes.frame = rect;
+//    }
+    CGRect frame = attributes.frame;
+    frame.size.width+=18;
+    attributes.frame = frame;
     return attributes;
     return layoutAttributes;
-    
-    
+
+
 }
 /*
 // Only override drawRect: if you perform custom drawing.

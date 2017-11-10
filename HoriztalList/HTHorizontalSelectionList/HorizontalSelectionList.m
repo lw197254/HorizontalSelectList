@@ -8,6 +8,8 @@
 
 #import "HorizontalSelectionList.h"
 #import "HorizontalSelectionListCell.h"
+#import "UICollectionViewLeftAlignedLayout.h"
+#import "AACollectionViewCell.h"
 #define kwidth [UIScreen mainScreen].bounds.size.width
 
 #define separateSpaceDefaultValue 20
@@ -19,15 +21,15 @@
 #define  defaultMinimumInteritemSpacing 10
 
 
-@interface HorizontalSelectionList ()<UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+@interface HorizontalSelectionList ()<UICollectionViewDataSource,UICollectionViewDelegateLeftAlignedLayout>
 
 
 @property (nonatomic, assign) NSInteger itemNumber;
 ///右边表示还有栏目的遮盖图，有栏目就灰色，没有栏目就透明
 @property (nonatomic, strong) UIImageView *rightMaskView;
 
-@property (nonatomic, strong) NSMutableDictionary *buttonColorsByState;
-@property (nonatomic, strong)UICollectionViewFlowLayout*layout;
+@property (nonatomic, strong) NSMutableDictionary<NSString*,UIColor*> *buttonColorsByState;
+@property (nonatomic, strong)UICollectionViewLeftAlignedLayout*layout;
 
 
 @end
@@ -46,9 +48,12 @@
     [self.collectionView registerNib:nib forCellWithReuseIdentifier:resuerIdentifier];
     
 }
+-(void)setTitleColor:(UIColor *)color forState:(UIControlState)state{
+    [self.buttonColorsByState setObject:color forKey:[NSNumber numberWithInteger:state]];
+}
 -(instancetype)init{
     if (self = [super init]) {
-        [self configUI];
+       
     }
     return self;
 }
@@ -62,6 +67,7 @@
     return self;
 }
 -(void)configUI{
+    
     self.seperateSpace = separateSpaceDefaultValue;
     if ( UIEdgeInsetsEqualToEdgeInsets(self.sectionInset, UIEdgeInsetsZero)) {
         self.sectionInset = UIEdgeInsetsMake(0, leftSpaceDefaultValue, 0, rightSpaceDefaultValue);
@@ -69,9 +75,10 @@
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     self.collectionView.backgroundColor = [UIColor clearColor];
-    [self.collectionView registerClass:[HorizontalSelectionListCell class] forCellWithReuseIdentifier:@"cell"];
+   
     [self addSubview:self.collectionView];
-    
+    [self.collectionView registerClass:[HorizontalSelectionListCell class] forCellWithReuseIdentifier:@"cell"];
+    [self.collectionView registerNib:[UINib nibWithNibName:@"AACollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"Acell"];
     [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self);
     }];
@@ -82,7 +89,7 @@
          self.layout.sectionInset =UIEdgeInsetsMake(self.sectionInset.top, self.sectionInset.left, self.sectionInset.bottom, self.sectionInset.right);
 //     self.layout.sectionInset =UIEdgeInsetsMake(self.sectionInset.top, self.sectionInset.left, self.sectionInset.bottom, self.sectionInset.right+(self.itemNumber-1)*(self.seperateSpace-defaultMinimumLineSpacing+defaultMinimumInteritemSpacing-self.layout.minimumInteritemSpacing));
     
-    [self.collectionView.collectionViewLayout invalidateLayout];
+//    [self.collectionView.collectionViewLayout invalidateLayout];
     [self.collectionView reloadData];
 }
 -(void)insertItemAtIndexes:(NSArray<NSNumber*>*)indexes{
@@ -136,10 +143,12 @@
         return [self.dataSource selectionList:self viewForItemWithIndex:indexPath.row];
     }else{
         HorizontalSelectionListCell*cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
-//        CGFloat height = collectionView.bounds.size.height;
-////        [cell.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
-////            make.height.mas_equalTo(height-self.layout.minimumInteritemSpacing*2-self.layout.sectionInset.top-self.layout.sectionInset.bottom);
-////        }];
+        [self.buttonColorsByState enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull key, UIColor * _Nonnull obj, BOOL * _Nonnull stop) {
+            [cell.titleButton setTitleColor:obj forState:[key integerValue]];
+        }];
+      
+        
+
         cell.title = [self.dataSource selectionList:self titleForItemWithIndex:indexPath.row];
         return cell;
     }
@@ -184,7 +193,7 @@
 //        self.layout.sectionInset =UIEdgeInsetsMake(self.sectionInset.top, self.sectionInset.left, self.sectionInset.bottom, self.sectionInset.right+(self.itemNumber-1)*(self.seperateSpace-defaultMinimumLineSpacing+defaultMinimumInteritemSpacing-self.layout.minimumInteritemSpacing));
         ///这个大小只要部位CGSizeZero就可以
        
-        self.layout.estimatedItemSize = CGSizeMake(30,30);
+//        self.layout.estimatedItemSize = CGSizeMake(30,30);
         _collectionView = [[UICollectionView alloc]initWithFrame:CGRectZero collectionViewLayout:self.layout];
         _collectionView.directionalLockEnabled = YES;
         if ([_collectionView respondsToSelector:@selector(setPrefetchingEnabled:)]) {
@@ -197,7 +206,7 @@
 }
 -(UICollectionViewFlowLayout*)layout{
     if (!_layout) {
-        _layout = [[UICollectionViewFlowLayout alloc]init];
+        _layout = [[UICollectionViewLeftAlignedLayout alloc]init];
         _layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
         
     }
@@ -205,5 +214,13 @@
     
     
 }
-
+-(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
+    return CGSizeMake(30, 30);
+}
+-(NSMutableDictionary<NSString*,UIColor*>*)buttonColorsByState{
+    if (!_buttonColorsByState) {
+        _buttonColorsByState = [[NSMutableDictionary<NSString*,UIColor*> alloc]init];
+    }
+    return _buttonColorsByState;
+}
 @end

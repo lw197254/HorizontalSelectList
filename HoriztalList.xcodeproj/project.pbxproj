@@ -19,6 +19,9 @@
 		014478121F3300E4007FE8CF /* rightmaskImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0144780D1F3300E4007FE8CF /* rightmaskImage@2x.png */; };
 		014478161F34585D007FE8CF /* CustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 014478151F34585D007FE8CF /* CustomButton.m */; };
 		014478211F347360007FE8CF /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 014478201F347360007FE8CF /* TableViewCell.m */; };
+		014580EE1FB57B980056F60C /* UICollectionViewLeftAlignedLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 014580ED1FB57B970056F60C /* UICollectionViewLeftAlignedLayout.m */; };
+		014580F61FB59B530056F60C /* AACollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 014580F31FB59B520056F60C /* AACollectionViewCell.m */; };
+		014580F71FB59B530056F60C /* AACollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 014580F41FB59B530056F60C /* AACollectionViewCell.xib */; };
 		01F12BE31F4184A2000A048D /* HorizontalSelectionList.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F12BE21F4184A2000A048D /* HorizontalSelectionList.m */; };
 		01F12BE71F41A311000A048D /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F12BE51F41A311000A048D /* CustomCell.m */; };
 		01F12BE81F41A311000A048D /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01F12BE61F41A311000A048D /* CustomCell.xib */; };
@@ -68,6 +71,11 @@
 		014478151F34585D007FE8CF /* CustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomButton.m; sourceTree = "<group>"; };
 		0144781F1F347360007FE8CF /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
 		014478201F347360007FE8CF /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
+		014580EC1FB57B970056F60C /* UICollectionViewLeftAlignedLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UICollectionViewLeftAlignedLayout.h; sourceTree = "<group>"; };
+		014580ED1FB57B970056F60C /* UICollectionViewLeftAlignedLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UICollectionViewLeftAlignedLayout.m; sourceTree = "<group>"; };
+		014580F31FB59B520056F60C /* AACollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AACollectionViewCell.m; sourceTree = "<group>"; };
+		014580F41FB59B530056F60C /* AACollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AACollectionViewCell.xib; sourceTree = "<group>"; };
+		014580F51FB59B530056F60C /* AACollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AACollectionViewCell.h; sourceTree = "<group>"; };
 		01F12BE11F4184A2000A048D /* HorizontalSelectionList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorizontalSelectionList.h; sourceTree = "<group>"; };
 		01F12BE21F4184A2000A048D /* HorizontalSelectionList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HorizontalSelectionList.m; sourceTree = "<group>"; };
 		01F12BE41F41A311000A048D /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
@@ -180,8 +188,13 @@
 			children = (
 				01F12BE11F4184A2000A048D /* HorizontalSelectionList.h */,
 				01F12BE21F4184A2000A048D /* HorizontalSelectionList.m */,
+				014580EC1FB57B970056F60C /* UICollectionViewLeftAlignedLayout.h */,
+				014580ED1FB57B970056F60C /* UICollectionViewLeftAlignedLayout.m */,
 				014478091F3300E4007FE8CF /* HorizontalSelectionListCell.h */,
 				0144780A1F3300E4007FE8CF /* HorizontalSelectionListCell.m */,
+				014580F51FB59B530056F60C /* AACollectionViewCell.h */,
+				014580F31FB59B520056F60C /* AACollectionViewCell.m */,
+				014580F41FB59B530056F60C /* AACollectionViewCell.xib */,
 				01F12BE91F41A3A8000A048D /* 512_512@2x.png */,
 				01F12BE41F41A311000A048D /* CustomCell.h */,
 				01F12BE51F41A311000A048D /* CustomCell.m */,
@@ -321,6 +334,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01F12BE81F41A311000A048D /* CustomCell.xib in Resources */,
+				014580F71FB59B530056F60C /* AACollectionViewCell.xib in Resources */,
 				014477E11F3300CC007FE8CF /* LaunchScreen.storyboard in Resources */,
 				014477DE1F3300CC007FE8CF /* Assets.xcassets in Resources */,
 				01F12BEA1F41A3A8000A048D /* 512_512@2x.png in Resources */,
@@ -398,6 +412,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				014580F61FB59B530056F60C /* AACollectionViewCell.m in Sources */,
 				014478211F347360007FE8CF /* TableViewCell.m in Sources */,
 				014478161F34585D007FE8CF /* CustomButton.m in Sources */,
 				01F12BE71F41A311000A048D /* CustomCell.m in Sources */,
@@ -405,6 +420,7 @@
 				01F12BE31F4184A2000A048D /* HorizontalSelectionList.m in Sources */,
 				014477D91F3300CB007FE8CF /* ViewController.m in Sources */,
 				014477D61F3300CB007FE8CF /* AppDelegate.m in Sources */,
+				014580EE1FB57B980056F60C /* UICollectionViewLeftAlignedLayout.m in Sources */,
 				014477D31F3300CB007FE8CF /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

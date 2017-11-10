@@ -34,12 +34,15 @@
     self.list.delegate = self;
     self.list.dataSource = self;
     self.list.sectionInset = UIEdgeInsetsMake(5, 10, 5, 10);
-    self.list.seperateSpace = 10;
+    self.list.seperateSpace = 50;
+    [self.list setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+     [self.list setTitleColor:[UIColor blueColor] forState:UIControlStateHighlighted];
+     [self.list setTitleColor:[UIColor blackColor] forState:UIControlStateSelected];
     self.data = [NSMutableArray array];
     NSString*str = @"ab";
     
     for (NSInteger i = 0; i < 10; i++) {
-        str = [str stringByAppendingString:@"ab"];
+        
         NSString*aaa = [NSString stringWithFormat:@"%@我是第%ld个",str,i];
         [self.data addObject:aaa];
     }

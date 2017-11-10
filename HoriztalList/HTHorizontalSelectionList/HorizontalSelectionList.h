@@ -88,9 +88,8 @@ typedef NS_ENUM(NSInteger, HTHorizontalSelectionIndicatorStyle) {
 @end
 
 @protocol HorizontalSelectionListDelegate <NSObject>
-
+@optional
 - (void)selectionList:(HorizontalSelectionList *)selectionList didSelectItemWithIndex:(NSInteger)index;
-
 
 
 @end
