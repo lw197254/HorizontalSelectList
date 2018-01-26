@@ -40,28 +40,23 @@ typedef NS_ENUM(NSInteger, HTHorizontalSelectionIndicatorStyle) {
 @property (nonatomic, strong) UIColor *bottomTrimColor;
 @property (nonatomic) BOOL showRightMaskView;
 @property (nonatomic) BOOL bottomTrimHidden;                // Default is NO
-/////10 一般用10
-//@property (nonatomic) CGFloat leftSpace;
-///20 一般用20
+
+///两个按钮距离，默认值为20
 @property (nonatomic) CGFloat seperateSpace;
-//@property (nonatomic) CGFloat rightSpace;
+
 
 ///每个按钮的edgeInsets
 @property(nonatomic,assign)UIEdgeInsets sectionInset;
-//@property (nonatomic) CGFloat topSpace;
-//@property (nonatomic) CGFloat bottomSpace;
+
 
 //@property (nonatomic,assign) BOOL selectionIndicatorBarHidden;
 ///自定义视图是否可以响应事件，默认为NO，如果可以响应，则selectionList:(HorizontalSelectionList *)selectionList didSelectButtonWithIndex:(NSInteger)index; 不响应
 @property(nonatomic,assign)BOOL contentViewUserInteractionEnabled;
 
-///一屏最多显示个数,
-@property(nonatomic,assign)NSInteger maxShowCount;
-///default is 0,0的话会尽可能多的显示
-@property(nonatomic,assign)NSInteger minShowCount;
+
 @property(nonatomic,strong)UIFont* titleFont;
 @property (nonatomic) HTHorizontalSelectionIndicatorStyle selectionIndicatorStyle;
-@property (nonatomic, strong) UICollectionView *collectionView;
+
 
 - (void)setTitleColor:(UIColor *)color forState:(UIControlState)state;
 -(__kindof UICollectionViewCell*)dequeueReusableCellWithClass:(Class)class forIndex:(NSInteger)index isXIB:(BOOL)isXIB;

@@ -30,7 +30,7 @@
 
 @property (nonatomic, strong) NSMutableDictionary<NSString*,UIColor*> *buttonColorsByState;
 @property (nonatomic, strong)UICollectionViewLeftAlignedLayout*layout;
-
+@property (nonatomic, strong) UICollectionView *collectionView;
 
 @end
 
@@ -147,7 +147,9 @@
             [cell.titleButton setTitleColor:obj forState:[key integerValue]];
         }];
       
-        
+        if(self.titleFont){
+            cell.titleButton.titleLabel.font = self.titleFont;
+        }
 
         cell.title = [self.dataSource selectionList:self titleForItemWithIndex:indexPath.row];
         return cell;
