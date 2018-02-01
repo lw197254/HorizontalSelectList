@@ -11,6 +11,8 @@
 #import "HorizontalSelectionList.h"
 #import "TableViewCell.h"
 #import "CustomCell.h"
+#import "AACollectionViewCell.h"
+#import "Person.h"
 @interface ViewController ()<HorizontalSelectionListDelegate,HorizontalSelectionListDataSource,UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet CustomButton *otherButton;
 @property (weak, nonatomic) IBOutlet UIButton *oneBUtton;
@@ -23,6 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.list = [[HorizontalSelectionList alloc]init];
     [self.view addSubview:self.list];
     [self.list mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -39,11 +42,12 @@
      [self.list setTitleColor:[UIColor blueColor] forState:UIControlStateHighlighted];
      [self.list setTitleColor:[UIColor blackColor] forState:UIControlStateSelected];
     self.data = [NSMutableArray array];
+    
     NSString*str = @"ab";
     
     for (NSInteger i = 0; i < 10; i++) {
         
-        NSString*aaa = [NSString stringWithFormat:@"%@我是第%ld个",str,i];
+        NSString*aaa = [NSString stringWithFormat:@"%@%ld",str,i];
         [self.data addObject:aaa];
     }
     
@@ -77,9 +81,10 @@
 -(NSInteger)numberOfItemsInSelectionList:(HorizontalSelectionList *)selectionList{
     return self.data.count;
 }
--(NSString*)selectionList:(HorizontalSelectionList *)selectionList titleForItemWithIndex:(NSInteger)index{
+- (__kindof UICollectionViewCell *)selectionList:(HorizontalSelectionList *)selectionList viewForItemWithIndex:(NSInteger)index{
+   AACollectionViewCell*cell = [selectionList dequeueReusableCellWithClass:[AACollectionViewCell class] forIndex:index isXIB:YES];
+    return cell;
     
-    return self.data[index];
 }
 -(void)selectionList:(HorizontalSelectionList *)selectionList didSelectButtonWithIndex:(NSInteger)index{
 //    [self.data removeObjectAtIndex:index];
@@ -96,9 +101,9 @@
     TableViewCell*cell = [tableView dequeueReusableCellWithIdentifier:@"TableViewCell" forIndexPath:indexPath];
     NSString*title =@"";
     for (NSInteger i = 0; i < indexPath.row; i++) {
-        title = [title stringByAppendingString:@"你好呀，我真的不知道怎么回事的呢"];
+        title = [title stringByAppendingString:@"abc"];
     }
-    cell.Label.text = title;
+    cell.Label.text = NSLocalizedString(@"well", @"");;
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{

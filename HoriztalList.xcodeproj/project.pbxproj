@@ -7,6 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01272B8F202056EB0065F029 /* UILabel+Title.m in Sources */ = {isa = PBXBuildFile; fileRef = 01272B8D202056EB0065F029 /* UILabel+Title.m */; };
+		01272BB220206D720065F029 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01272BB120206D710065F029 /* Info.plist */; };
+		01272BD320206E010065F029 /* LaunchScreen.strings in Resources */ = {isa = PBXBuildFile; fileRef = 01272BB420206E010065F029 /* LaunchScreen.strings */; };
+		01272BD420206E010065F029 /* Main.strings in Resources */ = {isa = PBXBuildFile; fileRef = 01272BB620206E010065F029 /* Main.strings */; };
+		01272BD520206E010065F029 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 01272BB820206E010065F029 /* Localizable.strings */; };
+		01272BDA20206E010065F029 /* LaunchScreen.strings in Resources */ = {isa = PBXBuildFile; fileRef = 01272BC420206E010065F029 /* LaunchScreen.strings */; };
+		01272BDB20206E010065F029 /* Jan.strings in Resources */ = {isa = PBXBuildFile; fileRef = 01272BC620206E010065F029 /* Jan.strings */; };
+		01272BDC20206E010065F029 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 01272BC820206E010065F029 /* Localizable.strings */; };
+		01272BDD20206E010065F029 /* LaunchScreen.strings in Resources */ = {isa = PBXBuildFile; fileRef = 01272BCB20206E010065F029 /* LaunchScreen.strings */; };
+		01272BDE20206E010065F029 /* Jan.strings in Resources */ = {isa = PBXBuildFile; fileRef = 01272BCD20206E010065F029 /* Jan.strings */; };
+		01272BE020206E010065F029 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 01272BD120206E010065F029 /* Localizable.strings */; };
+		01272CAA202163FD0065F029 /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = 01272CA9202163FD0065F029 /* Car.m */; };
+		01272CB32021A61B0065F029 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 01272CB22021A61B0065F029 /* Person.m */; };
+		01272CB62021C7B70065F029 /* DataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 01272CB42021C7B70065F029 /* DataBase.m */; };
+		01272CB92022B00C0065F029 /* myDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 01272CB82022B00C0065F029 /* myDatabase.m */; };
+		01272CBF2022E0F80065F029 /* DBBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01272CBE2022E0F80065F029 /* DBBaseModel.m */; };
+		01272CC22022E1840065F029 /* DBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 01272CC12022E1840065F029 /* DBHelper.m */; };
+		01272CC72022E2B30065F029 /* DataBaseTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 01272CC62022E2B30065F029 /* DataBaseTest.m */; };
+		01272CDD2022FDA80065F029 /* libPods-HoriztalList.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01272CDE2022FDA80065F029 /* libPods-HoriztalList.a */; };
+		01272CDF202302010065F029 /* libFMDB.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01272CE0202302010065F029 /* libFMDB.a */; };
 		014477D31F3300CB007FE8CF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 014477D21F3300CB007FE8CF /* main.m */; };
 		014477D61F3300CB007FE8CF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 014477D51F3300CB007FE8CF /* AppDelegate.m */; };
 		014477D91F3300CB007FE8CF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 014477D81F3300CB007FE8CF /* ViewController.m */; };
@@ -26,7 +46,6 @@
 		01F12BE71F41A311000A048D /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F12BE51F41A311000A048D /* CustomCell.m */; };
 		01F12BE81F41A311000A048D /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01F12BE61F41A311000A048D /* CustomCell.xib */; };
 		01F12BEA1F41A3A8000A048D /* 512_512@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01F12BE91F41A3A8000A048D /* 512_512@2x.png */; };
-		4C42482F49477D592EB1FFEF /* libPods-HoriztalList.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C07C17587C1A5E477543989F /* libPods-HoriztalList.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +66,36 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01272B8D202056EB0065F029 /* UILabel+Title.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Title.m"; sourceTree = "<group>"; };
+		01272B8E202056EB0065F029 /* UILabel+Title.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Title.h"; sourceTree = "<group>"; };
+		01272BA5202067750065F029 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
+		01272BA6202067750065F029 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		01272BB120206D710065F029 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		01272BB520206E010065F029 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = LaunchScreen.strings; sourceTree = "<group>"; };
+		01272BB720206E010065F029 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = Main.strings; sourceTree = "<group>"; };
+		01272BB920206E010065F029 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = Localizable.strings; sourceTree = "<group>"; };
+		01272BC520206E010065F029 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = LaunchScreen.strings; sourceTree = "<group>"; };
+		01272BC720206E010065F029 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Jan.strings; sourceTree = "<group>"; };
+		01272BC920206E010065F029 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
+		01272BCC20206E010065F029 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = LaunchScreen.strings; sourceTree = "<group>"; };
+		01272BCE20206E010065F029 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = Jan.strings; sourceTree = "<group>"; };
+		01272BD220206E010065F029 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = Localizable.strings; sourceTree = "<group>"; };
+		01272CA8202163FD0065F029 /* Car.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Car.h; sourceTree = "<group>"; };
+		01272CA9202163FD0065F029 /* Car.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Car.m; sourceTree = "<group>"; };
+		01272CB12021A61B0065F029 /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		01272CB22021A61B0065F029 /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		01272CB42021C7B70065F029 /* DataBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataBase.m; path = "../../../../Downloads/FMDBDemo-master/FMDBDemo/FMDBDemo/DataBase.m"; sourceTree = "<group>"; };
+		01272CB52021C7B70065F029 /* DataBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataBase.h; path = "../../../../Downloads/FMDBDemo-master/FMDBDemo/FMDBDemo/DataBase.h"; sourceTree = "<group>"; };
+		01272CB72022B00C0065F029 /* myDatabase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = myDatabase.h; sourceTree = "<group>"; };
+		01272CB82022B00C0065F029 /* myDatabase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = myDatabase.m; sourceTree = "<group>"; };
+		01272CBD2022E0F80065F029 /* DBBaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DBBaseModel.h; sourceTree = "<group>"; };
+		01272CBE2022E0F80065F029 /* DBBaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DBBaseModel.m; sourceTree = "<group>"; };
+		01272CC02022E1840065F029 /* DBHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DBHelper.h; sourceTree = "<group>"; };
+		01272CC12022E1840065F029 /* DBHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DBHelper.m; sourceTree = "<group>"; };
+		01272CC52022E2B30065F029 /* DataBaseTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataBaseTest.h; sourceTree = "<group>"; };
+		01272CC62022E2B30065F029 /* DataBaseTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataBaseTest.m; sourceTree = "<group>"; };
+		01272CDE2022FDA80065F029 /* libPods-HoriztalList.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-HoriztalList.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		01272CE0202302010065F029 /* libFMDB.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libFMDB.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		014477CE1F3300CB007FE8CF /* HoriztalList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HoriztalList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		014477D21F3300CB007FE8CF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		014477D41F3300CB007FE8CF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -56,7 +105,6 @@
 		014477DB1F3300CB007FE8CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		014477DD1F3300CC007FE8CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		014477E01F3300CC007FE8CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		014477E21F3300CC007FE8CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		014477E71F3300CC007FE8CF /* HoriztalListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HoriztalListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		014477EB1F3300CC007FE8CF /* HoriztalListTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HoriztalListTests.m; sourceTree = "<group>"; };
 		014477ED1F3300CC007FE8CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -83,7 +131,6 @@
 		01F12BE61F41A311000A048D /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
 		01F12BE91F41A3A8000A048D /* 512_512@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "512_512@2x.png"; sourceTree = "<group>"; };
 		7ED9B4CE10A381D2DD6C8C8D /* Pods-HoriztalList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoriztalList.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HoriztalList/Pods-HoriztalList.debug.xcconfig"; sourceTree = "<group>"; };
-		C07C17587C1A5E477543989F /* libPods-HoriztalList.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HoriztalList.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF68203AEFCEA0EE0D37F7C1 /* Pods-HoriztalList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoriztalList.release.xcconfig"; path = "Pods/Target Support Files/Pods-HoriztalList/Pods-HoriztalList.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,7 +139,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C42482F49477D592EB1FFEF /* libPods-HoriztalList.a in Frameworks */,
+				01272CDD2022FDA80065F029 /* libPods-HoriztalList.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +147,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01272CDF202302010065F029 /* libFMDB.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +161,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01272BB320206E010065F029 /* ja.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				01272BB420206E010065F029 /* LaunchScreen.strings */,
+				01272BB620206E010065F029 /* Main.strings */,
+				01272BB820206E010065F029 /* Localizable.strings */,
+			);
+			path = ja.lproj;
+			sourceTree = "<group>";
+		};
+		01272BC320206E010065F029 /* en.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				01272BC420206E010065F029 /* LaunchScreen.strings */,
+				01272BC620206E010065F029 /* Jan.strings */,
+				01272BC820206E010065F029 /* Localizable.strings */,
+			);
+			path = en.lproj;
+			sourceTree = "<group>";
+		};
+		01272BCA20206E010065F029 /* zh-Hans.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				01272BCB20206E010065F029 /* LaunchScreen.strings */,
+				01272BCD20206E010065F029 /* Jan.strings */,
+				01272BD120206E010065F029 /* Localizable.strings */,
+			);
+			path = "zh-Hans.lproj";
+			sourceTree = "<group>";
+		};
 		014477C51F3300CB007FE8CF = {
 			isa = PBXGroup;
 			children = (
@@ -140,17 +218,28 @@
 			children = (
 				014478041F3300E4007FE8CF /* HTHorizontalSelectionList */,
 				014477D41F3300CB007FE8CF /* AppDelegate.h */,
+				014477D51F3300CB007FE8CF /* AppDelegate.m */,
 				014478141F34585C007FE8CF /* CustomButton.h */,
 				014478151F34585D007FE8CF /* CustomButton.m */,
-				014477D51F3300CB007FE8CF /* AppDelegate.m */,
+				01272CB52021C7B70065F029 /* DataBase.h */,
+				01272CB42021C7B70065F029 /* DataBase.m */,
+				01272CBD2022E0F80065F029 /* DBBaseModel.h */,
+				01272CBE2022E0F80065F029 /* DBBaseModel.m */,
+				01272CC02022E1840065F029 /* DBHelper.h */,
+				01272CC12022E1840065F029 /* DBHelper.m */,
 				014477D71F3300CB007FE8CF /* ViewController.h */,
 				014477D81F3300CB007FE8CF /* ViewController.m */,
 				0144781F1F347360007FE8CF /* TableViewCell.h */,
 				014478201F347360007FE8CF /* TableViewCell.m */,
+				01272CA8202163FD0065F029 /* Car.h */,
+				01272CA9202163FD0065F029 /* Car.m */,
+				01272CB12021A61B0065F029 /* Person.h */,
+				01272CB22021A61B0065F029 /* Person.m */,
+				01272CB72022B00C0065F029 /* myDatabase.h */,
+				01272CB82022B00C0065F029 /* myDatabase.m */,
 				014477DA1F3300CB007FE8CF /* Main.storyboard */,
 				014477DD1F3300CC007FE8CF /* Assets.xcassets */,
 				014477DF1F3300CC007FE8CF /* LaunchScreen.storyboard */,
-				014477E21F3300CC007FE8CF /* Info.plist */,
 				014478131F331FD8007FE8CF /* PrefixHeader.pch */,
 				014477D11F3300CB007FE8CF /* Supporting Files */,
 			);
@@ -161,6 +250,10 @@
 			isa = PBXGroup;
 			children = (
 				014477D21F3300CB007FE8CF /* main.m */,
+				01272BC320206E010065F029 /* en.lproj */,
+				01272BB320206E010065F029 /* ja.lproj */,
+				01272BCA20206E010065F029 /* zh-Hans.lproj */,
+				01272BB120206D710065F029 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -169,6 +262,8 @@
 			isa = PBXGroup;
 			children = (
 				014477EB1F3300CC007FE8CF /* HoriztalListTests.m */,
+				01272CC52022E2B30065F029 /* DataBaseTest.h */,
+				01272CC62022E2B30065F029 /* DataBaseTest.m */,
 				014477ED1F3300CC007FE8CF /* Info.plist */,
 			);
 			path = HoriztalListTests;
@@ -186,6 +281,8 @@
 		014478041F3300E4007FE8CF /* HTHorizontalSelectionList */ = {
 			isa = PBXGroup;
 			children = (
+				01272B8E202056EB0065F029 /* UILabel+Title.h */,
+				01272B8D202056EB0065F029 /* UILabel+Title.m */,
 				01F12BE11F4184A2000A048D /* HorizontalSelectionList.h */,
 				01F12BE21F4184A2000A048D /* HorizontalSelectionList.m */,
 				014580EC1FB57B970056F60C /* UICollectionViewLeftAlignedLayout.h */,
@@ -207,7 +304,8 @@
 		80507DDD0937757AA622B66F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C07C17587C1A5E477543989F /* libPods-HoriztalList.a */,
+				01272CE0202302010065F029 /* libFMDB.a */,
+				01272CDE2022FDA80065F029 /* libPods-HoriztalList.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -315,6 +413,8 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
+				ja,
 			);
 			mainGroup = 014477C51F3300CB007FE8CF;
 			productRefGroup = 014477CF1F3300CB007FE8CF /* Products */;
@@ -334,10 +434,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				01F12BE81F41A311000A048D /* CustomCell.xib in Resources */,
+				01272BE020206E010065F029 /* Localizable.strings in Resources */,
+				01272BD520206E010065F029 /* Localizable.strings in Resources */,
+				01272BD420206E010065F029 /* Main.strings in Resources */,
+				01272BDD20206E010065F029 /* LaunchScreen.strings in Resources */,
 				014580F71FB59B530056F60C /* AACollectionViewCell.xib in Resources */,
+				01272BB220206D720065F029 /* Info.plist in Resources */,
+				01272BDB20206E010065F029 /* Jan.strings in Resources */,
+				01272BD320206E010065F029 /* LaunchScreen.strings in Resources */,
 				014477E11F3300CC007FE8CF /* LaunchScreen.storyboard in Resources */,
+				01272BDE20206E010065F029 /* Jan.strings in Resources */,
 				014477DE1F3300CC007FE8CF /* Assets.xcassets in Resources */,
+				01272BDA20206E010065F029 /* LaunchScreen.strings in Resources */,
 				01F12BEA1F41A3A8000A048D /* 512_512@2x.png in Resources */,
+				01272BDC20206E010065F029 /* Localizable.strings in Resources */,
 				014477DC1F3300CB007FE8CF /* Main.storyboard in Resources */,
 				014478121F3300E4007FE8CF /* rightmaskImage@2x.png in Resources */,
 			);
@@ -381,13 +491,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HoriztalList-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C86EE04DAFB90DBE2B2DD2CD /* [CP] Copy Pods Resources */ = {
@@ -412,16 +525,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01272CB92022B00C0065F029 /* myDatabase.m in Sources */,
 				014580F61FB59B530056F60C /* AACollectionViewCell.m in Sources */,
 				014478211F347360007FE8CF /* TableViewCell.m in Sources */,
 				014478161F34585D007FE8CF /* CustomButton.m in Sources */,
 				01F12BE71F41A311000A048D /* CustomCell.m in Sources */,
 				014478101F3300E4007FE8CF /* HorizontalSelectionListCell.m in Sources */,
+				01272CB32021A61B0065F029 /* Person.m in Sources */,
+				01272CAA202163FD0065F029 /* Car.m in Sources */,
 				01F12BE31F4184A2000A048D /* HorizontalSelectionList.m in Sources */,
 				014477D91F3300CB007FE8CF /* ViewController.m in Sources */,
+				01272CBF2022E0F80065F029 /* DBBaseModel.m in Sources */,
 				014477D61F3300CB007FE8CF /* AppDelegate.m in Sources */,
+				01272CB62021C7B70065F029 /* DataBase.m in Sources */,
 				014580EE1FB57B980056F60C /* UICollectionViewLeftAlignedLayout.m in Sources */,
+				01272CC22022E1840065F029 /* DBHelper.m in Sources */,
 				014477D31F3300CB007FE8CF /* main.m in Sources */,
+				01272B8F202056EB0065F029 /* UILabel+Title.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,6 +549,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01272CC72022E2B30065F029 /* DataBaseTest.m in Sources */,
 				014477EC1F3300CC007FE8CF /* HoriztalListTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -457,10 +578,83 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		01272BB420206E010065F029 /* LaunchScreen.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				01272BB520206E010065F029 /* ja */,
+			);
+			name = LaunchScreen.strings;
+			sourceTree = "<group>";
+		};
+		01272BB620206E010065F029 /* Main.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				01272BB720206E010065F029 /* ja */,
+			);
+			name = Main.strings;
+			sourceTree = "<group>";
+		};
+		01272BB820206E010065F029 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				01272BB920206E010065F029 /* ja */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		01272BC420206E010065F029 /* LaunchScreen.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				01272BC520206E010065F029 /* en */,
+			);
+			name = LaunchScreen.strings;
+			sourceTree = "<group>";
+		};
+		01272BC620206E010065F029 /* Jan.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				01272BC720206E010065F029 /* en */,
+			);
+			name = Jan.strings;
+			sourceTree = "<group>";
+		};
+		01272BC820206E010065F029 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				01272BC920206E010065F029 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		01272BCB20206E010065F029 /* LaunchScreen.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				01272BCC20206E010065F029 /* zh-Hans */,
+			);
+			name = LaunchScreen.strings;
+			sourceTree = "<group>";
+		};
+		01272BCD20206E010065F029 /* Jan.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				01272BCE20206E010065F029 /* zh-Hans */,
+			);
+			name = Jan.strings;
+			sourceTree = "<group>";
+		};
+		01272BD120206E010065F029 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				01272BD220206E010065F029 /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		014477DA1F3300CB007FE8CF /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				014477DB1F3300CB007FE8CF /* Base */,
+				01272BA5202067750065F029 /* ja */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -469,6 +663,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				014477E01F3300CC007FE8CF /* Base */,
+				01272BA6202067750065F029 /* ja */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -480,6 +675,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -528,6 +724,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";

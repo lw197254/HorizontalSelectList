@@ -9,7 +9,7 @@
 #import "HorizontalSelectionList.h"
 #import "HorizontalSelectionListCell.h"
 #import "UICollectionViewLeftAlignedLayout.h"
-#import "AACollectionViewCell.h"
+
 #define kwidth [UIScreen mainScreen].bounds.size.width
 
 #define separateSpaceDefaultValue 20
@@ -78,7 +78,7 @@
    
     [self addSubview:self.collectionView];
     [self.collectionView registerClass:[HorizontalSelectionListCell class] forCellWithReuseIdentifier:@"cell"];
-    [self.collectionView registerNib:[UINib nibWithNibName:@"AACollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"Acell"];
+   
     [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self);
     }];

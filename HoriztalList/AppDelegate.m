@@ -7,7 +7,9 @@
 //
 
 #import "AppDelegate.h"
-
+#import "Person.h"
+#import <YYModel.h>
+#import "DataBase.h"
 @interface AppDelegate ()
 
 @end
@@ -16,6 +18,32 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+   
+    NSDictionary*dict = @{@"carArray":@[@{@"own_id":@"1",@"name":@"xiaoming",@"brand":@"dazhong"},@{@"own_id":@"2",@"name":@"xiaoming",@"brand":@"da"}],@"ID":@"3",@"age":@"3",@"number":@"3"};
+    Person*model = [Person yy_modelWithJSON:dict];
+    [model saveOrUpdate];
+  NSArray*array =   [Person findAll];
+   
+////    NSArray*array = @[@{@"age":@"1",@"name":@"xiaoming"},@{@"age":@"1",@"name":@"xiaoming"}];
+////    NSArray*array1 = [NSArray yy_modelArrayWithClass:[CarModel class] json:array];
+////    CarModel*car = [model.array firstObject];
+//    Car*car = [Car yy_modelWithJSON:@{@"age":@"1",@"name":@"xiaoming",@"brand ":@"da"}];
+//    
+//    [car commit];
+//    [model commit];
+//   
+//    SRKResultSet*q = [[Car query]  fetch ];
+//  Car*model1 =  [q firstObject];
+//    for (Car*model in q) {
+//        NSLog(@"__________%@", model.brand);
+//    }
+//   
+//    Person*person = [[Person alloc]init];
+//    person.age = 15;
+//    [[DataBase sharedDataBase]addPerson: person];
+//    
+//     NSArray*aaaa = [[DataBase sharedDataBase] getAllPerson];
+   
     // Override point for customization after application launch.
     return YES;
 }
